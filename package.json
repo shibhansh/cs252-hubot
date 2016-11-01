@@ -1,50 +1,25 @@
 {
   "name": "hubot-todo",
-  "version": "1.0.11",
-  "author": {
-    "name": "vishal singh",
-    "url": ""
-  },
-  "contributors": [
-    {
-      "name": "vishal singh",
-      "email": ""
-    }
-  ],
-  "keywords": [
-    "hubot",
-    "adapter",
-    "task management",
-    "slack"
-  ],
-  "description": "A task management hubot",
-  "licenses": [
-    {
-      "type": "",
-      "url": ""
-    }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vishals79/hubot-todo.git"
-  },
-  "bugs": {
-    "url": "https://github.com/vishals79/hubot-todo/issues",
-    "email": ""
-  },
-  "devDependencies": {
-    "coffee-script": "~1.7.1",
-    "hubot": "~2.11"
-  },
-  "main": "./index",
-  "engines": {
-    "node": ">=0.4.7"
-  },
-  "scripts": {
-    "test": "echo \"Error: No test specified\" && exit 1"
-  },
+  "version": "0.0.0",
+  "private": true,
+  "author": "Pratik",
+  "description": "A simple helpful robot for your Company",
   "dependencies": {
-    "slack-client": "~1.4.0"
+    "hubot": "^2.19.0",
+    "hubot-diagnostics": "0.0.1",
+    "hubot-google-images": "^0.2.6",
+    "hubot-google-translate": "^0.2.0",
+    "hubot-help": "^0.2.0",
+    "hubot-heroku-keepalive": "^1.0.2",
+    "hubot-maps": "0.0.2",
+    "hubot-pugme": "^0.1.0",
+    "hubot-redis-brain": "0.0.3",
+    "hubot-rules": "^0.1.1",
+    "hubot-scripts": "^2.17.2",
+    "hubot-shipit": "^0.2.0",
+    "hubot-slack": "^4.2.1"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
-
