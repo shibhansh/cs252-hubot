@@ -14,7 +14,6 @@
 class Todos
 	constructor: (@robot) ->
 		@robot.brain.data.todos = {}
-
 		@robot.respond /(add|create) (.*)/i, @addItem
 		@robot.respond /delete( [0-9]+| all){0,1}/i, @removeItem
 		@robot.respond /list/i, @listItems
