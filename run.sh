@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "GMail User Id: "
+echo "IITK User Id: "
 read user
 echo "Password: "
 stty -echo

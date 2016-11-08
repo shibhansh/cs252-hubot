@@ -10,9 +10,9 @@ smtpTransport = require('nodemailer-smtp-transport')
 app = express()
 
 smtpTransport = nodemailer.createTransport(smtpTransport(
-  host: 'smtp.gmail.com',
+  host: 'mmtp.iitk.ac.in',
   secureConnection: false,
-  port: 587,
+  port: 25,
   auth:
     user: process.env.HUBOT_EMAIL_USER,
     pass: process.env.HUBOT_EMAIL_PWD))
@@ -40,7 +40,7 @@ module.exports = (robot) ->
 
     # Create an object to inform our mailing procedure
     obj = {
-      from: "HUBOT <hubot@pratikpc.com>",
+      from: "HUBOT <pratikab@iitk.ac.in>",
       to: mailto,
       subject: subject or "Just a friendly update from Factals"
       text: message or ""
