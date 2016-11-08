@@ -6,6 +6,7 @@
   "description": "A simple helpful robot for your Company",
   "dependencies": {
     "chrono-node": "^1.2.5",
+    "cleverbot-node": "^0.2.2",
     "hubot": ">= 2.4.0 < 3.0.0",
     "hubot-diagnostics": "0.0.1",
     "hubot-gmail-fetcher": ">= 0.1.0",
