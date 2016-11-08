@@ -1,6 +1,3 @@
-# Description:
-#   Friendly reminders for hubot
-#
 # Commands:
 #   hubot remind me tomorrow to document this better
 #   hubot remind us in 15 minutes to end this meeting
@@ -12,14 +9,23 @@
 #   hubot remind in every 30 minutes to take a walk
 #   hubot remind[er] repeat [NUMBER]
 #   hubot repeat remind[er] [NUMBER]
-#
-# Notes:
-#   For help with the time string syntax, see
-#   http://wanasit.github.io/pages/chrono/
 
+express = require "express"
+nodemailer    = require "nodemailer"
+smtpTransport = require('nodemailer-smtp-transport')
+app = express()
 chrono = require 'chrono-node'
 uuid = require 'node-uuid'
 moment = require 'moment'
+
+smtpTransport = nodemailer.createTransport(smtpTransport(
+  host: 'mmtp.iitk.ac.in',
+  secureConnection: false,
+  port: 25,
+  auth:
+    user: process.env.HUBOT_EMAIL_USER,
+    pass: process.env.HUBOT_EMAIL_PWD))
+
 
 envelope_key = (e) ->
   e.room || e.user.id
@@ -71,7 +77,18 @@ class Reminders
 
   fire: (reminder, id) ->
     unless reminder.is_deleted
-      @robot.reply reminder.envelope, "You asked me to remind you #{reminder.action}"
+      @robot.reply reminder.envelope, "***Reminder*** You asked me to remind you #{reminder.action}"
+      obj = {
+        from: "HUBOT <pratikab@iitk.ac.in>",
+        to: process.env.HUBOT_EMAIL_ID,
+        subject: "Reminder",
+        text: "#{reminder.action}"
+      }
+      smtpTransport.sendMail obj, (error, response) ->
+        if error 
+          msg.send "There was an error: " + error
+        else
+          msg.send "Ok. I sent the email."
       @pending[reminder.key()].shift()
       @remove(id)
       setTimeout =>
