@@ -7,8 +7,11 @@
   "dependencies": {
     "chrono-node": "^1.2.5",
     "cleverbot-node": "^0.2.2",
+    "es6-promise": "^4.0.5",
     "events": "^1.1.1",
+    "googleapis": "^14.2.0",
     "hubot": ">= 2.4.0 < 3.0.0",
+    "hubot-config": "^1.0.1",
     "hubot-diagnostics": "0.0.1",
     "hubot-gmail-fetcher": ">= 0.1.0",
     "hubot-google-images": "^0.2.6",
@@ -23,6 +26,7 @@
     "hubot-remind-her": "^0.4.1",
     "hubot-rules": "^0.1.1",
     "hubot-schedule": "~0.5.0",
+    "hubot-script-spreadsheet": "0.0.13",
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^4.2.1",
@@ -35,7 +39,9 @@
     "moment": "^2.15.2",
     "node-uuid": "^1.4.7",
     "nodemailer": "^2.6.4",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "url": "^0.11.0",
+    "xml2js": "^0.4.17"
   },
   "engines": {
     "node": "0.10.x"

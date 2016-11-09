@@ -225,7 +225,7 @@ module.exports = (robot) ->
   robot.respond /(hello)/i, (msg) ->
     msg.send 'Hello!'
 
-  robot.respond /exam (.*)/i, (msg) ->
+  robot.respond /exams (.*)/i, (msg) ->
     roll = msg.match[1]
     fetch = url+roll
     msg.http(fetch) .get() (err, res, body) ->
