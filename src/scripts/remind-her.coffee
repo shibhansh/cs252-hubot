@@ -296,6 +296,16 @@ module.exports = (robot) ->
         if mail.text
           mailDetail += "\n"
           mailDetail += mail.text
+          par_date = /(Quiz|Exam)+ +on+ +\d{1,2}\s+(Jan(uary)?|Feb(ruary)?|Mar(ch)?|Apr(il)?|May|Jun(e)?|Jul(y)?|Aug(ust)?|Sep(tember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?)/i
+          check = par_date.test(mail.text)
+          if check
+            check2 = par_date.exec(mail.text)
+            mg = check2[0].split(' ')
+            topic = mg[0]
+            time = mg.shift()
+            x = mg.join(' ')
+            m = "remind me "+x+" to "+time
+            reminders.add m
         msg.send mailDetail
       ), (() ->
         robot.logger.info "Max UID: #{client.lastfetch}"
