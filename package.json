@@ -5,10 +5,12 @@
   "author": "Pratik",
   "description": "A simple helpful robot for your Company",
   "dependencies": {
+    "async": "^2.1.2",
     "chrono-node": "^1.2.5",
     "cleverbot-node": "^0.2.2",
     "es6-promise": "^4.0.5",
     "events": "^1.1.1",
+    "google-spreadsheet": "^2.0.3",
     "googleapis": "^14.2.0",
     "hubot": ">= 2.4.0 < 3.0.0",
     "hubot-arm": "^0.2.1",
