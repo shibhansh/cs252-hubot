@@ -47,8 +47,6 @@ chrono_parse = (text, ref) ->
   if time_until(date) <= 0 && result.tags.ENTimeExpressionParser
     ref = chrono.parse('tomorrow')[0].start.date()
     return chrono_parse text, ref
-  # console.log "parsed '#{text}' -> #{date}:"
-  # console.log result
   result
 
 class Reminders
