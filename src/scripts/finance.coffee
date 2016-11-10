@@ -9,7 +9,10 @@ module.exports = (robot) ->
 		sh = msg.match[0]
 		sheet_par = sh.split(" ")
 		amount = sheet_par[2]
-		reason = sheet_par[3]
+		temp = sheet_par.shift()
+		temp = sheet_par.shift()
+		temp = sheet_par.shift()
+		reason = sheet_par.join(" ")
 		urls = "https://docs.google.com/forms/d/e/1FAIpQLSdLLEJXp_jKxjjGTaEYotCnfzKKT9yRkREoyN8Xm5WCsC1B5A/formResponse?entry.1712859746="+amount+"&entry.1479987058="+reason+"&submit=Submit"
 		options = 
 			url: urls
