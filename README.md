@@ -62,3 +62,8 @@ This can be used as a personal/team bot for simple tasks (described below).
 ##Credits
 - npm repository for node.js reminder constructor and apis
 - https://github.com/vishals79/hubot-todo for slack-hubot integration
+
+##Contributors
+- Pratik Bhangale (14173)
+- Rohit Mukku (14402)
+- Shibhansh Dohare (14644)
