@@ -3,6 +3,12 @@
 ##Introduction
 This can be used as a personal/team bot for simple tasks (described below).
 
+##Requirements
+- Node.js and npm installed
+- Redis Server
+- Hubot
+- Various npm libraries mentioned in package.json
+
 ##Functionalities
 - Get Exam schedules
 - Fetch mails
@@ -54,5 +60,5 @@ This can be used as a personal/team bot for simple tasks (described below).
     Search news on some key word `search news about <key>`
 
 ##Credits
-- npm repository for node.js libraries
+- npm repository for node.js reminder constructor and apis
 - https://github.com/vishals79/hubot-todo for slack-hubot integration
