@@ -49,3 +49,6 @@ This can be used as a personal/team bot for simple tasks (described below).
 
 7. Cleverbot
     Chat with cleverbot `@<msg>`
+
+8. Google-news Headlines
+    Search news on some key word `search news about <key>`
