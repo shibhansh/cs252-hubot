@@ -211,8 +211,8 @@ class ReminderAt
 module.exports = (robot) ->
   reminders = new Reminders robot
   timer = 0
-  interval = parseInt(process.env.GMAIL_FETCH_INTERVAL || 1)
-  label = process.env.GMAIL_LABEL || "Inbox"
+  interval = parseInt(process.env.EMAIL_FETCH_INTERVAL || 1)
+  label = process.env.EMAIL_LABEL || "Inbox"
   client = false
   c = new cleverbot()
 
@@ -243,34 +243,34 @@ module.exports = (robot) ->
       msg.send tex
 
   
-  robot.respond /gmail fetch start/i, (msg) ->
+  robot.respond /Email fetch start/i, (msg) ->
     if not client
       client = initClient(msg)
       if client
-        msg.send "Started the GMail fetch"
+        msg.send "Started the EMail fetch"
     else
       msg.send "Its already running!"
 
-  robot.respond /gmail fetch stop/i, (msg) ->
+  robot.respond /Email fetch stop/i, (msg) ->
     if client
       client.close()
       client = false
       clearTimeout timer
-      msg.send "Stopped the GMail fetch"
+      msg.send "Stopped the EMail fetch"
 
-  robot.respond /fetch-gmail change ([1-9][0-9]*)/i, (msg) ->
+  robot.respond /email fetch change ([1-9][0-9]*)/i, (msg) ->
     clearTimeout timer
     interval = parseInt msg.match[1]
     setTimer interval, msg
-    msg.send "Changed the GMail fetch interval"
+    msg.send "Changed the EMail fetch interval"
 
   initClient = (msg) ->
     robot.logger.info "Initializing IMAP client..."
-    _client = inbox.createConnection false, "imap.gmail.com", {
+    _client = inbox.createConnection false, "qasid.iitk.ac.in", {
       secureConnection: true
       auth:
-        user: process.env.GMAIL_USER
-        pass: process.env.GMAIL_PASSWORD
+        user: process.env.HUBOT_EMAIL_USER
+        pass: process.env.HUBOT_EMAIL_PWD
     }
     _client.lastfetch = 0
     _client.connect()
