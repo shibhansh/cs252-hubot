@@ -52,3 +52,7 @@ This can be used as a personal/team bot for simple tasks (described below).
 
 8. Google-news Headlines
     Search news on some key word `search news about <key>`
+
+##Credits
+- npm repository for node.js libraries
+- https://github.com/vishals79/hubot-todo for slack-hubot integration
