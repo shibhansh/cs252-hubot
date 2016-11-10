@@ -235,11 +235,11 @@ module.exports = (robot) ->
           subject: "Exam Schedule for #{roll}",
           text: "#{tex}"
         }
-        smtpTransport.sendMail obj, (error, response) ->
-              if error 
-                msg.send "There was an error: " + error
-              else
-                msg.send "Ok. I sent the email."
+      smtpTransport.sendMail obj, (error, response) ->
+          if error 
+            msg.send "There was an error: " + error
+          else
+            msg.send "Ok. I sent the email."
       msg.send tex
 
   
