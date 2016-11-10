@@ -4,7 +4,7 @@ google = new GoogleNews
 track = undefined
 
 module.exports = (robot) ->
-    robot.respond /search news about (.*)/,i (msg) ->
+    robot.respond /search news about (.*)/i, (msg) ->
         track = msg.match[1]
         google.stream track, (stream) ->
             stream.on GoogleNews.DATA, (data) ->

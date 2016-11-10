@@ -1,4 +1,4 @@
 module.exports = (robot) ->
-  robot.respond /shutdown$/i, (res) ->
-    res.send 'See you!'
-    res.robot.shutdown()
+  robot.respond /shutdown$/i, (msg) ->
+    msg.send 'See you!'
+    msg.robot.shutdown()
