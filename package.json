@@ -10,6 +10,7 @@
     "cleverbot-node": "^0.2.2",
     "es6-promise": "^4.0.5",
     "events": "^1.1.1",
+    "google-news": "^1.4.6",
     "google-spreadsheet": "^2.0.3",
     "googleapis": "^14.2.0",
     "hubot": ">= 2.4.0 < 3.0.0",
